@@ -14,6 +14,7 @@ exports.up = function (knex) {
     table.text("description").notNullable();
     table.text("features").notNullable();
     table.json("images").notNullable();
+    table.json("preview_images").notNullable();
 
     table.timestamps(true, true);
   });
