@@ -6,6 +6,8 @@ const app = express();
 
 const categoriesRoutes = require("./routes/categories");
 const productsRoutes = require("./routes/products");
+const boxContentRoutes = require("./routes/box_content");
+const galleryRoutes = require("./routes/gallery");
 
 const PORT = process.env.PORT || 8081;
 
@@ -14,5 +16,7 @@ app.use(express.json());
 
 app.use("/api", categoriesRoutes);
 app.use("/api", productsRoutes);
+app.use("/api", boxContentRoutes);
+app.use("/api", galleryRoutes);
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
