@@ -23,12 +23,17 @@ router.get("/products", (req, res) => {
 // Get products by category
 router.get("/products/category/:category_id", (req, res) => {
   const { category_id } = req.params;
-  knex
-    .select("*")
-    .from("products")
-    .where({ category_id })
+  const { isNew } = req.query;
+
+  let query = knex.select("*").from("products").where({ category_id });
+
+  if (isNew) {
+    query = query.andWhere({ isNew });
+  }
+
+  query
     .then((data) => {
-      if (data) {
+      if (data.length > 0) {
         res.status(200).json(data);
       } else {
         res
@@ -43,8 +48,6 @@ router.get("/products/category/:category_id", (req, res) => {
         .json({ message: "Error retrieving products for this category" });
     });
 });
-
-module.exports = router;
 
 // Get product by ID
 router.get("/products/:id", (req, res) => {
@@ -66,3 +69,5 @@ router.get("/products/:id", (req, res) => {
       res.status(500).json({ message: "Error retrieving product" });
     });
 });
+
+module.exports = router;
