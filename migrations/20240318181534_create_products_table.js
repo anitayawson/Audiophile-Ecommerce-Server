@@ -7,8 +7,7 @@ exports.up = function (knex) {
       .integer("category_id")
       .unsigned()
       .references("id")
-      .inTable("categories")
-      .onDelete("CASCADE");
+      .inTable("categories");
     table.boolean("isNew").notNullable();
     table.integer("price").notNullable();
     table.text("description").notNullable();
