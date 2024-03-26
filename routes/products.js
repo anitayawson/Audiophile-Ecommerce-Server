@@ -50,12 +50,12 @@ router.get("/products/category/:category_id", (req, res) => {
 });
 
 // Get product by ID
-router.get("/products/:id", (req, res) => {
-  const { id } = req.params;
+router.get("/products/:slug", (req, res) => {
+  const { slug } = req.params;
   knex
     .select("*")
     .from("products")
-    .where({ id })
+    .where({ slug })
     .first()
     .then((data) => {
       if (data) {
