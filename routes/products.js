@@ -50,6 +50,27 @@ router.get("/products/category/:category_id", (req, res) => {
 });
 
 // Get product by ID
+router.get("/products/:id", (req, res) => {
+  const { id } = req.params;
+  knex
+    .select("*")
+    .from("products")
+    .where({ id })
+    .first()
+    .then((data) => {
+      if (data) {
+        res.status(200).json(data);
+      } else {
+        res.status(404).json({ message: "Product not found" });
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({ message: "Error retrieving product" });
+    });
+});
+
+// Get product by slug
 router.get("/products/:slug", (req, res) => {
   const { slug } = req.params;
   knex
