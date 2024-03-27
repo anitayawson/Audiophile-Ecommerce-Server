@@ -50,7 +50,7 @@ router.get("/products/category/:category_id", (req, res) => {
 });
 
 // Get product by ID
-router.get("/products/:id", (req, res) => {
+router.get("/products/id/:id", (req, res) => {
   const { id } = req.params;
   knex
     .select("*")
@@ -71,7 +71,7 @@ router.get("/products/:id", (req, res) => {
 });
 
 // Get product by slug
-router.get("/products/:slug", (req, res) => {
+router.get("/products/slug/:slug", (req, res) => {
   const { slug } = req.params;
   knex
     .select("*")
