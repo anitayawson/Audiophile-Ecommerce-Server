@@ -91,4 +91,17 @@ router.delete("/cart/:id", async (req, res) => {
   }
 });
 
+// DELETE All Items from Cart
+router.delete("/cart", async (req, res) => {
+  try {
+    await knex("cart").del();
+    res
+      .status(200)
+      .json({ message: "All items successfully deleted from cart" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error deleting items from cart" });
+  }
+});
+
 module.exports = router;
