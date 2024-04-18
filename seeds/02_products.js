@@ -29,7 +29,7 @@ exports.seed = async function (knex) {
         mobile:
           "https://res.cloudinary.com/duepohol4/image/upload/v1710783204/Audiophile/product-yx1-earphones/mobile/image-category-page-preview_dycqxm.jpg",
         tablet:
-          "https://res.cloudinary.com/duepohol4/image/upload/v1710783204/Audiophile/product-yx1-earphones/mobile/image-category-page-preview_dycqxm.jpg",
+          "https://res.cloudinary.com/duepohol4/image/upload/v1710783198/Audiophile/product-yx1-earphones/tablet/image-category-page-preview_ql94s5.jpg",
         desktop:
           "https://res.cloudinary.com/duepohol4/image/upload/v1710783201/Audiophile/product-yx1-earphones/desktop/image-category-page-preview_lxhf8x.jpg",
       },
