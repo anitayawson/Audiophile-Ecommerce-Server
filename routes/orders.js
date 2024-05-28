@@ -57,7 +57,7 @@ router.post(
         shipping_cost,
         vat,
         grand_total,
-        items,
+        items: JSON.stringify(items),
       });
 
       res
