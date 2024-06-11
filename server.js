@@ -13,7 +13,12 @@ const orderRoutes = require("./routes/orders");
 
 const PORT = process.env.PORT || 8081;
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://audiophile-ecommerce-client.vercel.app/",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api", categoriesRoutes);
