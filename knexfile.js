@@ -1,4 +1,5 @@
 require("dotenv").config();
+require("knex");
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
