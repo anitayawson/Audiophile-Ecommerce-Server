@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const knex = require("knex")(require("../knexfile.js"));
+const knexConfig = require("./knexfile");
+const environment = process.env.NODE_ENV || "development";
+const knex = require("knex")(knexConfig[environment]);
+// const knex = require("knex")(require("../knexfile"));
 
 // GET All Cart Items
 router.get("/cart", (req, res) => {

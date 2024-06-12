@@ -1,8 +1,6 @@
-require("dotenv").config();
+// require("dotenv").config();
 
-console.log(`Running in ${process.env.NODE_ENV} mode`);
-
-module.exports = require("knex")({
+module.exports = {
   development: {
     client: "mysql2",
     connection: {
@@ -28,4 +26,4 @@ module.exports = require("knex")({
       directory: "./migrations",
     },
   },
-});
+};

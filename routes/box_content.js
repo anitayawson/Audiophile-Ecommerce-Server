@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const knex = require("knex")(require("../knexfile.js"));
-
+const knexConfig = require("./knexfile");
+const environment = process.env.NODE_ENV || "development";
+const knex = require("knex")(knexConfig[environment]);
+// const knex = require("knex")(require("../knexfile"));
+//
 // Get box content for specific product
 router.get("/box_content/product/:product_id", (req, res) => {
   const { product_id } = req.params;
