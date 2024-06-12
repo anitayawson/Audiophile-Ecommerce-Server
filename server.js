@@ -11,7 +11,7 @@ const galleryRoutes = require("./routes/gallery");
 const cartRoutes = require("./routes/cart");
 const orderRoutes = require("./routes/orders");
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || process.env.production.PORT;
 
 const allowedOrigins = [
   "http://localhost:3000",
