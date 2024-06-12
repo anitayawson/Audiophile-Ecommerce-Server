@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("knex")(require("../knexfile.js"));
+const db = require("../production_db.js");
 
 // Get ALL categories
 router.get("/categories", (req, res) => {
-  knex
-    .select("*")
+  db.select("*")
     .from("categories")
     .then((data) => {
       if (data) {
