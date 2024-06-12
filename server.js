@@ -14,7 +14,7 @@ const orderRoutes = require("./routes/orders");
 const PORT = process.env.PORT || 8081;
 
 const corsOptions = {
-  origin: "https://audiophile-ecommerce-client.vercel.app/",
+  origin: "https://audiophile-ecommerce-client.vercel.app",
   optionsSuccessStatus: 200,
 };
 
