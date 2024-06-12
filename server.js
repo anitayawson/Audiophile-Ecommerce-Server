@@ -16,6 +16,7 @@ const PORT = process.env.PORT || process.env.production.PORT;
 const allowedOrigins = [
   "http://localhost:3000",
   "https://audiophile-ecommerce-client.vercel.app",
+  "*",
 ];
 
 const corsOptions = {
